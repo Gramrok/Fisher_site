@@ -1,12 +1,12 @@
 <?require 'head.php';?>
-   <body>
-      <div class="main-block">
-         <div class="container paper">
-            <?require 'header.php';?>
-            <div id="main">
-                <div id="contacts">
-                  <h2><a class="post_ttl" title="ГОСТЕВАЯ КНИГА">ГОСТЕВАЯ КНИГА</a></h2>
-				  <div id="about">
+<body>
+   <div class="main-block">
+      <div class="container paper">
+         <?require 'header.php';?>
+         <div id="main">
+            <div id="contacts">
+               <h2><a class="post_ttl" title="ГОСТЕВАЯ КНИГА">ГОСТЕВАЯ КНИГА</a></h2>
+               <div id="about">
                   <div style="margin:40px; text-align:justify;">
                      <form action="add_mail.php" method="post">
                         <p><b>Хотите оставить нам свое пожелание или сообщение в гостевой книге?</b></p>
@@ -32,11 +32,11 @@
                      
                      ?>
                </div>
-			   </div>
             </div>
-            <div class="clear-both"></div>
          </div>
+         <div class="clear-both"></div>
       </div>
-      <?require 'footer.php';?>
-   </body>
+   </div>
+   <?require 'footer.php';?>
+</body>
 </html>
