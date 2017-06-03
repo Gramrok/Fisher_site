@@ -1,16 +1,4 @@
-<? session_start();
-   if (isset($_SESSION['basketcounter'])==false)
-   {
-   	$_SESSION['basketcounter']=0;
-   }
-   ?>
-<html>
-   <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <link rel="shortcut icon" href="images/logotip.png" type="image/png">
-      <title>РыбоМания - Интернет-магазин рыболовных принадлежностей</title>
-      <link rel="stylesheet" type="text/css" href="style.css" />
-   </head>
+<?require 'head.php';?>
    <body>
       <div class="main-block">
          <div class="container paper">
