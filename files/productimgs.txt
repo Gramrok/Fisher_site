@@ -1,0 +1,6 @@
+major_craft.png
+daiwa.jpg
+crazy_fish.jpg
+keitech.png
+zetrix.png
+abu_garcia.jpg
