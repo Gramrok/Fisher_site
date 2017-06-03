@@ -5,8 +5,8 @@ if (isset($_SESSION['login']) && isset($_SESSION['adminmode'])) {
 } else {
     $itemnumber = '';
     for ($i = 0; $i < $_SESSION['basketcounter']; $i++) {
-        if (!empty($_GET['product' . $i])) {
-            $itemnumber = $_GET['product' . $i];
+        if (!empty($_GET['item' . $i])) {
+            $itemnumber = $_GET['item' . $i];
             if ($itemnumber != '') {
                 $itemnumber = $i;
                 break;
