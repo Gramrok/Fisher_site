@@ -14,24 +14,29 @@
 			    echo '<a href="', $bannersrcs[$i], '"target="_blank"><img src="banner/', $bannerimgs[$i], '" alt="', $bannernames[$i], '"></a>';
 			}
 			?>
-					  </div>
+		   </div>
 			<?
 			if (isset($_SESSION['login']) && isset($_SESSION['adminmode'])) {
 			    echo '<button class="spoiler-title">Добавить товар</button>
-					     <div class="spoiler-body" id="addprod">
-					     <h2 class="post_ttl">Добавление товаров</h2>
-					     <form method="post" enctype="multipart/form-data" action=addproduct.php>
-					     <p align="center">Название: 
-					     <input type="text" size="40" name="productname" required></p>
-					     <p align="center">Описание товара: 
-					     <textarea rows="10" cols="40" name="productdesc"></textarea></p>
-					     <p align="center">Цена: 
-					     <input type="text" name="productprice" required></p>
-					     <p>Картинка (рекоменд. размер - 200x200px):<br>
-					     <input type="file" name="productimg" required></p>
-					     <input type="submit" value="Добавить товар">
-					     </form>
-					     </div>';
+				<div class="spoiler-body" id="addprod">
+				   <h2 class="post_ttl">Добавление товаров</h2>
+				   <form method="post" enctype="multipart/form-data" action=addproduct.php>
+				      <p align="center">Название: 
+					 <input type="text" size="40" name="productname" required>
+				      </p>
+				      <p align="center">Описание товара: 
+					 <textarea rows="10" cols="40" name="productdesc"></textarea>
+				      </p>
+				      <p align="center">Цена: 
+					 <input type="text" name="productprice" required>
+				      </p>
+				      <p>Картинка (рекоменд. размер - 200x200px):<br>
+					 <input type="file" name="productimg" required>
+				      </p>
+				      <input type="submit" value="Добавить товар">
+				   </form>
+				</div>
+				';
 			}
 			?>
 			<?php
@@ -40,13 +45,9 @@
 			$productimgs   = file('files/productimgs.txt', FILE_IGNORE_NEW_LINES);
 			$productprices = file('files/productprices.txt', FILE_IGNORE_NEW_LINES);
 			for ($i = 0; $i < count($productnames); $i++) {
-			    echo '
-							<div id="product">
-					     <p  style="font-size:24px;color:#003841;"><img align="left" src="products/', $productimgs[$i], '" alt="', $productnames[$i], '"/>', $productnames[$i], '<br><p align="left" style="margin-top:20px;text-align:justify;">', $productdescs[$i], '</p></p>
-
-					     <p align="center" style="font-size:24px;color:#003841;">Цена: ', $productprices[$i], 'руб.</p>';
-
-
+			    echo '<div id="product">
+				 <p  style="font-size:24px;color:#003841;"><img align="left" src="products/', $productimgs[$i], '" alt="', $productnames[$i], '"/>', $productnames[$i], '<br><p align="left" style="margin-top:20px;text-align:justify;">', $productdescs[$i], '</p></p>
+				 <p align="center" style="font-size:24px;color:#003841;">Цена: ', $productprices[$i], 'руб.</p>';
 
 			    if (isset($_SESSION['login']) && isset($_SESSION['adminmode'])) {
 				echo '<form action="delproduct.php" method="GET" >
