@@ -3,30 +3,25 @@
       <a href="index.php"><img src="images/logotip.png"></a>
    </div>
    <div id="basket" class="float-right">
-      <?php if (isset($_SESSION['login']))
-         {
-          if (isset($_SESSION['login']) && isset($_SESSION['adminmode'])) 
-         {
-         $orderscount=file('files/ordersitems8GE72dgr73D12.txt', FILE_IGNORE_NEW_LINES);
-         echo '<a href="new_orders.php">  Новые заказы: ', count($orderscount), '</a>
-         ';
-         }
-         else
-         {
-         echo ' <a href="basket.php"> Товаров в корзине: ', $_SESSION['basketcounter'], '</a>
-         ';
-         }
-         }
-         else
-         echo'<a href="basket.php"> Товаров в корзине: ', $_SESSION['basketcounter'], '</a>
-         ';
-         ?>
+      <?php
+	if (isset($_SESSION['login'])) {
+	    if (isset($_SESSION['login']) && isset($_SESSION['adminmode'])) {
+		$orderscount = file('files/ordersitems8GE72dgr73D12.txt', FILE_IGNORE_NEW_LINES);
+		echo '<a href="new_orders.php">  Новые заказы: ', count($orderscount), '</a>
+		 ';
+	    } else {
+		echo ' <a href="basket.php"> Товаров в корзине: ', $_SESSION['basketcounter'], '</a>
+		 ';
+	    }
+	} else
+	    echo '<a href="basket.php"> Товаров в корзине: ', $_SESSION['basketcounter'], '</a>
+		 ';
+	?>
    </div>
    <div class="header_info">
       <div class="reg">
          <?php
 		if (isset($_SESSION['login'])) {
-
 		    if (isset($_SESSION['login']) && isset($_SESSION['adminmode'])) {
 			echo '<p>Здравствуйте, ', $_SESSION['login'], '  Роль: администратор </p><p> <a href="exit.php">Выйти</a>  <a href="cabinet.php">Личный кабинет </a> </p>';
 		    } else {
@@ -48,7 +43,6 @@
 		for ($i = 0; $i < count($daynews); $i++) {
 		    echo $daynews[$i];
 		}
-
 
 		?>
       </div>
