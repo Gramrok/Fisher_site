@@ -27,9 +27,9 @@ if (strlen($password1) < 8) {
     echo '<script>location.href="registration.php"</script>';
     exit;
 }
-file_put_contents('files/logins.txt', htmlspecialchars($login) . "\n", FILE_APPEND);
-file_put_contents('files/emails.txt', htmlspecialchars($email) . "\n", FILE_APPEND);
-file_put_contents('files/passwords.txt', htmlspecialchars($password1) . "\n", FILE_APPEND);
+file_put_contents('files/logins.txt', $login . "\n", FILE_APPEND);
+file_put_contents('files/emails.txt', $email . "\n", FILE_APPEND);
+file_put_contents('files/passwords.txt', $password1 . "\n", FILE_APPEND);
 $_SESSION['login'] = $login;
 echo '<script>location.href="index.php"</script>';
 ?>
