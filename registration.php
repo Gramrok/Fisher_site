@@ -17,10 +17,9 @@
                   <p align="center"><input style="height: 50px; width: 250px; font-size: 22px; cursor:pointer;" type="submit" value="Зарегистрироваться"></p>
                   <?
                      $_SESSION['login_already_exist']=false;
-                     if ($_SESSION['login_already_exist']==true)
-                     {
-                     echo '<p align="center">Этот логин уже занят. Пожалуйста, введите другой логин</p>';
-                     $_SESSION['login_already_exist']=false;
+                     if ($_SESSION['login_already_exist']==true) {
+                        echo '<p align="center">Этот логин уже занят. Пожалуйста, введите другой логин</p>';
+                        $_SESSION['login_already_exist']=false;
                      }
                      ?>
                </div>
