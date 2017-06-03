@@ -23,10 +23,18 @@ if (isset($_SESSION['login']) && isset($_SESSION['adminmode'])) {
     file_put_contents('files/productprices.txt', '');
     file_put_contents('files/productimgs.txt', '');
     for ($i = $productnumber; $i < count($productnames); $i++) {
-        $productnames[$i]  = $productnames[$i + 1];
-        $productdescs[$i]  = $productdescs[$i + 1];
+        if(!empty($productnames[$i])  && !empty($productnames[$i + 1])){
+            $productnames[$i]  = $productnames[$i + 1];
+        }
+        if(!empty($productdescs[$i])  && !empty($productdescs[$i + 1])){
+        $productdescs[$i]   = $productdescs[$i + 1];
+        }
+        if(!empty($productprices[$i])  && !empty($productprices[$i + 1])){
         $productprices[$i] = $productprices[$i + 1];
+        }
+        if(!empty($productimgs[$i])  && !empty($productimgs[$i + 1])){
         $productimgs[$i]   = $productimgs[$i + 1];
+        }
     }
     for ($i = 0; $i < count($productnames) - 1; $i++) {
         file_put_contents('files/productnames.txt', $productnames[$i] . "\n", FILE_APPEND);
